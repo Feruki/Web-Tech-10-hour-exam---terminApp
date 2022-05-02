@@ -1,0 +1,47 @@
+/* Grundgerüst der Kachel */
+.kachel {
+    width: 30vw;
+    height: 12rem;
+    position: relative;
+    background: var(--darker);
+}
+
+/* Verhalten einzelner Fonts und Positionierung dieser Anfang */
+.kachel h3 {
+    font-size: 2em;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.kachel h2, .kacehl p, .kachel h3 {
+    color: var(--white);
+    text-align: center;
+}
+/* Positionierung + Formartierung Ende */
+
+/* Einzelne Elemente zentrieten Anfang */
+.kachel form {
+    display: flex;
+    justify-content: center;
+}
+
+.kachel select {
+    display: flex;
+    width: 30%;
+    margin-left: 35%;
+    text-align: center;
+}
+
+.kachel > div {
+    padding-top: 1.5em;
+}
+/* Einzelne Elemente zentrieren Ende */
+
+/* Für kleinere Bildschirme (<880px breit) */
+@media screen and (max-width: 880px) {
+    .kachel {
+        width: 100vw;
+    }
+}

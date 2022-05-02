@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>Termin App - Startseite</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/grid.css">
+        <link rel="stylesheet" href="/css/kacheln.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- Nav über dem Header, da ich den Navigationslink oben links haben möchte -->
+        <nav>
+            <a href="/">Zurück zur Startseite</a>
+        </nav>
+        <header>
+            <h1>Termin App</h1>
+        </header>
+        
+        <main>
+            <!-- Um in der CSS Datei unterscheiden zu können -->
+            <div class="start">
+                <!-- Dieses div ist um das Grundgerüst der Kacheln aufzubauen -->
+                <div class="kachel">
+                    
+                    <h3><a href="/neu">Neue Abstimmung erstellen</a></h3>
+                </div>
+                <div class="kachel">
+                    <!-- Dieses div dient lediglich der Gestaltung, um den Inhalt zu zentrieren -->
+                    <div>
+                        <h2>An Abstimmung teilnehmen</h2>
+                        <p>Teilnehmercode:</p>
+                        <form action="/api/postTeilnehmer" method="post">
+                            <input id="tcode" type="text" minlength="6" maxlength="6" name="tcode" required>
+                            <button type="submit">Los!</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="kachel">
+                    <div>
+                        <h2>Bestehende Abstimmung betrachten</h2>
+                        <p>Administratorcode:</p>
+                        <form action="/api/postAdmin" method="post">
+                            <input id="acode" type="text" minlength="6" maxlength="6" name="acode" required>
+                            <button type="submit">Los!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p><i>Erstellt von Yannick Amerkamp</i></p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>Termin App - Startseite</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/grid.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- Nav über dem Header, da ich den Navigationslink oben links haben möchte -->
+        <nav>
+            <a href="/">Zurück zur Startseite</a>
+        </nav>
+        <header>
+            <h1>Termin App</h1>
+        </header>
+        <main>
+            <!-- Um in der CSS Datei unterscheiden zu können -->
+            <div class="neu">
+                <form action="/api/postAbstimmung" method="post">
+                    <label for="name">Name der Abstimmung:</label><br>
+                    <input id="name" type="text" name="absName" minlength="3" maxlength="100"><br>
+
+                    <label for="desc">Beschreibung der Abstimmung:</label><br>
+                    <textarea id="desc" cols="40" rows="10" name="absDesc"></textarea><br>
+
+                    <label for="anzTermine">Anzahl der Termine: </label>
+                    <input id="anzTermine" type="number" value="2" name="anzahl" min="2">
+                    <section id="fieldsetTermine">
+                        <fieldset>
+                            <legend><h3>Termin 1</h3></legend>
+                            <label for="datum1">Datum:</label>
+                            <input id="datum1" type="text" name="datum1">
+                            <label for="start1">Start:</label>
+                            <input id="start1" type="text" name="start1">
+                            <label for="ende1">Ende:</label>
+                            <input id="ende1" type="text" name="ende1">
+                        </fieldset>
+                        <fieldset>
+                            <legend><h3>Termin 2</h3></legend>
+                            <label for="datum2">Datum:</label>
+                            <input id="datum2" type="text" name="datum2">
+                            <label for="start2">Start:</label>
+                            <input id="start2" type="text" name="start2">
+                            <label for="ende2">Ende:</label>
+                            <input id="ende2" type="text" name="ende2">
+                        </fieldset>
+                    </section>
+                    <button type="submit">Los!</button>
+                </form>
+            </div>
+        </main>
+        <footer>
+            <p><i>Erstellt von Yannick Amerkamp</i></p>
+        </footer>
+        <script src="/js/termine.js"></script>
+    </body>
+</html>

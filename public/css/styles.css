@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+/* Einfache Selektion verschiedener Farben
+Ich benutze sehr gerne Darkmode, deshalb dunklere Farben */
+:root {
+    --main-bg-color: #2f3136;
+    --darker: #202225;
+    --primary-color: #5865f2;
+    --white: #fafafa;
+    --dark-white: #7e848d;
+}
+
+/* Body Anfang */
+body {
+    padding: 0;
+    background-color: var(--main-bg-color);
+    font-family: 'Roboto', 'Helvetica', 'Arial';
+    color: var(--white);
+}
+/* Body Ende */
+
+/* Main Anfang */
+main {
+    padding: 0.5em 1em;
+}
+/* Main Ende */
+
+/* Jegliche Paragraphs zentrieren */
+p {
+    text-align: center;
+}
+
+/* Ich persönlich bin kein Fan des lila Hyperlinks, also lasse ich diesen weiß */
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+/* Um dennoch den Link hervorzuheben, wird der on hover bläulich */
+a:hover {
+    color: var(--primary-color);
+}

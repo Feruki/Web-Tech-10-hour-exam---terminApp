@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>Termin App - Startseite</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/grid.css">
+        <link rel="stylesheet" href="/css/kacheln.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- Nav über dem Header, da ich den Navigationslink oben links haben möchte -->
+        <nav>
+            <a href="/">Zurück zur Startseite</a>
+        </nav>
+        <header>
+            <h1>Termin App</h1>
+        </header>
+        
+        <main>
+            <!-- Um die Seite spezifisch anzusprechen in CSS -->
+            <div class = "stimmen">
+                <!-- Um die Inhalte zu stylen -->
+                <div>
+                    <p>Name der Abstimmung: <%= abstimmung.name %></p>
+                    <p>Beschreibung der Abstimmung: <%= abstimmung.beschreibung %></p>
+                </div>
+                <%
+                for(let i = 1; i < abstimmung.termine.length; i++) {
+                %>
+                    <fieldset>
+                        <legend>Termin <%= i%></legend>
+                        <p>Datum: <%= abstimmung.termine[i].datum %></p>
+                        <p>Start: <%= abstimmung.termine[i].start %></p>
+                        <p>Ende: <%= abstimmung.termine[i].ende %></p>
+                    </fieldset>
+                    <!-- Um die Tabelle seperat zu stylen -->
+                    <div class = "tabelle">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Option</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%
+                                    for(let s = 1; s < abstimmung.termine[i].stimmen.length; s++) {     
+                                %>
+                                <td><%= abstimmung.termine[i].stimmen[s].name %></td>
+                                <td><%= abstimmung.termine[i].stimmen[s].option %></td>
+                            </tbody>
+                        </table>
+                    </div>
+                <%
+                    }
+                }
+                %> 
+            </div>
+            
+        </main>
+        <footer>
+            <p><i>Erstellt von Yannick Amerkamp</i></p>
+        </footer>
+    </body>
+</html>

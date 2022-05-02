@@ -1,0 +1,73 @@
+/* Body der Seiten wird zum Grid zur Einteilung der Bereiche */
+body {
+    display: grid;
+    height: 100vh;
+
+    grid-template-rows: auto auto 1fr auto;
+}
+/* Body Ende */
+
+/* Header Anfang */
+header {
+    display: grid;
+    gap: 1em;
+    justify-content: center;
+}
+/* Header Ende */
+
+/* Main Anfang */
+main {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    text-align: center;
+}
+
+main .start {
+    display: flex;
+    gap: 2em;
+}
+
+main .termine form {
+    display: flex;
+    gap: 1em;
+    flex-direction: column-reverse;
+    text-align: center;
+}
+
+main .neu form {
+    display: flex;
+    flex-direction: column;
+}
+
+main .neu form input, main .neu form textarea {
+    text-align: center;
+}
+
+main .neu form button {
+    margin-top: 1em;
+}
+
+main .neu, main .stimmen {
+    display: grid;
+}
+
+main .neu > *, main .stimmen > * {
+    width: fit-content;
+}
+/* Main Ende */
+
+/* Das "Copyright" auf die rechte Seite schieben */
+footer {
+    display: grid;
+    justify-content: right;
+}
+
+/* Für kleine Bildschirme (<880px) werden die Kacheln der Startseite untereinander angezeigt */
+@media screen and (max-width: 880px) {
+    main .start{
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: auto auto;
+    }
+}

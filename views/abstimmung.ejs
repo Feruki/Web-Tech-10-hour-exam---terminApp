@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>Termin App - Startseite</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/grid.css">
+        <link rel="stylesheet" href="/css/kacheln.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- Nav über dem Header, da ich den Navigationslink oben links haben möchte -->
+        <nav>
+            <a href="/">Zurück zur Startseite</a>
+        </nav>
+
+        <header>
+            <h1>Termin App</h1>
+        </header>
+        
+        <main>
+            <!-- Um die Seite spezifisch anzusprechen in CSS -->
+            <div class = "termine">
+                <form action="/api/postTermin" method="post">
+                <%
+                for(let i = 1; i < abstimmung.termine.length; i++) {
+                %>
+                    <!-- Grundgerüst der Kacheln -->
+                    <div class = "kachel">
+                        <!-- Um die Inhalte der Kacheln seperat zu stylen -->
+                        <div>
+                            <h2>Datum: <%= abstimmung.termine[i].datum %></h2>
+                            <p>Startzeit: <%= abstimmung.termine[i].start %></p>
+                            <p>Endzeit: <%= abstimmung.termine[i].ende %></p>
+                            <select id="terminSelect" name="termin<%=i %>">
+                                <option value="Ja">Ja</option>
+                                <option value="Nein">Nein</option>
+                                <option value="Vielleicht">Vielleicht</option>
+                            </select>
+                        </div>
+                    </div>
+                <%
+                }
+                %> 
+                <!-- Um den Namen und Button seperat zu stylen -->
+                <div>
+                    <input id="hidden" name="terminAnzahl" value="<%= abstimmung.termine.length %>" hidden>
+                    <input id="hidden" name="abstimmung" value="<%= abstimmung.name %>" hidden>
+                    <label for="tName">Name: </label>
+                    <input id="name" name="tName" type="text" required>
+                    <button type="submit">Los!</button>
+                </div>  
+                </form>
+            </div>
+            
+        </main>
+        <footer>
+            <p><i>Erstellt von Yannick Amerkamp</i></p>
+        </footer>
+    </body>
+</html>
